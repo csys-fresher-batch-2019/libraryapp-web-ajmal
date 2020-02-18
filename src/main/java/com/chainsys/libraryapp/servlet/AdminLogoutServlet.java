@@ -8,13 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class AdminLoginServlet
+ * Servlet implementation class AdminLogoutServlet
  */
-@WebServlet("/AdminLoginServlet")
-public class AdminLoginServlet extends HttpServlet {
+@WebServlet("/AdminLogoutServlet")
+public class AdminLogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,11 +21,11 @@ public class AdminLoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println(request.getContextPath());
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("LOGGED_IN_USER", "admin");
+		//HttpSession session = request.getSession();
+		//session.setAttribute("LOGGED_IN_USER", "admin");
 		
-		response.sendRedirect("adminhome.jsp?infoMessage=LoggedIn");
+		response.sendRedirect("index.jsp?infoMessage=Successfully LoggedOut");
 	}
-
+	
 
 }

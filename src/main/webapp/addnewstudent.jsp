@@ -21,14 +21,14 @@
         <a class="nav-brand" href="#">Library</a> 
         <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="adminhome.html">Home</a>
+              <a class="nav-link" href="adminhome.jsp">Home</a>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Action</a>
                 <div class="dropdown-menu">
-                    <a href="bookentry.html" class="dropdown-item">BookEntry</a>
-                    <a href="bookreturn.html" class="dropdown-item">BookReturn</a>
-                    <a href="bookrenewal.html" class="dropdown-item">BookRenewal</a>
+                    <a href="bookentry.jsp" class="dropdown-item">BookEntry</a>
+                    <a href="bookreturn.jsp" class="dropdown-item">BookReturn</a>
+                    <a href="bookrenewal.jsp" class="dropdown-item">BookRenewal</a>
                     <div class="dropdown-divider"></div>
 
                 </div>
@@ -39,13 +39,13 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Books</a>
                 <div class="dropdown-menu">
-                    <a href="addnewbook.html" class="dropdown-item">Add</a>
+                    <a href="addnewbook.jsp" class="dropdown-item">Add</a>
                     <a href="displayallbooksservlet" class="dropdown-item">List</a>
-                    <a href="updatebookcopies.html" class="dropdown-item">Update</a>
+                    <a href="updatebookcopies.jsp" class="dropdown-item">Update</a>
                     <div class="dropdown-divider"></div>
-                    <a href="searchbybookid.html" class="dropdown-item">Search By ID</a>
-                    <a href="searchbybookname.html" class="dropdown-item">Search By Name</a>
-                    <a href="unreturnedbooks.html" class="dropdown-item">UnReturned Book</a>
+                    <a href="searchbybookid.jsp" class="dropdown-item">Search By ID</a>
+                    <a href="searchbybookname.jsp" class="dropdown-item">Search By Name</a>
+                    <a href="unreturnedbooks.jsp" class="dropdown-item">UnReturned Book</a>
                     <div class="dropdown-divider"></div>
 
                 </div>
@@ -54,9 +54,9 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Users</a>
                 <div class="dropdown-menu">
-                    <a href="addnewadmin.html" class="dropdown-item">Add Admin Student</a>
+                    <a href="addnewadmin.jsp" class="dropdown-item">Add Admin Student</a>
                     <div class="dropdown-divider"></div>
-                    <a href="addnewstudent.html" class="dropdown-item">Add Student</a>
+                    <a href="addnewstudent.jsp" class="dropdown-item">Add Student</a>
                     <a href="displayallstudentservlet" class="dropdown-item">List Student</a>
                     <div class="dropdown-divider"></div>
 
@@ -66,29 +66,23 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Report</a>
                 <div class="dropdown-menu">
-                    <a href="searchbystudentid.html" class="dropdown-item">Search By Student ID</a>
+                    <a href="searchbystudentid.jsp" class="dropdown-item">Search By Student ID</a>
                 </div>
             </li>
           </ul>  
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Report.html">Welcome Ajmal(Admin)</a>
+                <a class="nav-link" href="Report.jsp">Welcome Ajmal(Admin)</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Logout</a>
+              <a class="nav-link" href="index.jsp">Logout</a>
             </li>
           </ul>  
       </nav>
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h2><center>Search By BookName </center></h2>
-          <form action="searchByBookNameServlet" method="GET">
-              <div class="form-group">
-                <label for="name">BookName:</label>
-                <input type="name" class="form-control" placeholder="Enter Bookname" id="name" required autofocus>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+          <h1>Library</h1> 
+          <p>Reading Books Keeps our heart Peace</p> 
     
         </div>
     </div>   

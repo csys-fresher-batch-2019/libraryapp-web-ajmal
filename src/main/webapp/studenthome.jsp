@@ -21,7 +21,7 @@
         <a class="nav-brand" href="#">Library</a> 
         <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.jsp">Home</a>
             </li>
               </div>
             
@@ -52,10 +52,10 @@
           </ul>  
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Report.html">Welcome Kumar(Student)</a>
+                <a class="nav-link" href="Report.jsp">Welcome Kumar(Student)</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Logout</a>
+              <a class="nav-link" href="index.jsp">Logout</a>
             </li>
           </ul>  
       </nav>

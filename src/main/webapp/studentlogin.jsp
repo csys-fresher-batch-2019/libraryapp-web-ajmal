@@ -22,25 +22,25 @@
     <a class="nav-brand" href="#">Library</a> 
     <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="books.html">Books</a>
+          <a class="nav-link" href="books.jsp">Books</a>
         </li>
       </ul>  
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="adminlogin.html">AdminLogin</a>
+          <a class="nav-link" href="adminlogin.jsp">AdminLogin</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="studentlogin.html">StudentLogin</a>
+            <a class="nav-link" href="studentlogin.jsp">StudentLogin</a>
           </li>
       </ul>  
   </nav>
 
   <div class="container">
     <h2><center>Student Login</center></h2>
-  <form action="adminhome.html" method="GET">
+  <form action="adminhome.jsp" method="GET">
       <div class="form-group">
         <label for="studentId">StudentId:</label>
         <input type="number" class="form-control" placeholder="Enter studentId" id="studentId" required autofocus>

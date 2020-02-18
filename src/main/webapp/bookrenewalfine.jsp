@@ -22,12 +22,12 @@
         <a class="nav-brand" href="#">Library</a> 
         <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="adminhome.html">Home</a>
+              <a class="nav-link" href="adminhome.jsp">Home</a>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Action</a>
                 <div class="dropdown-menu">
-                    <a href="bookentry.html" class="dropdown-item">BookEntry</a>
+                    <a href="bookentry.jsp" class="dropdown-item">BookEntry</a>
                     <a href="#" class="dropdown-item">BookReturn</a>
                     <a href="#" class="dropdown-item">BookRenewal</a>
                     <div class="dropdown-divider"></div>
@@ -40,13 +40,13 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Books</a>
                 <div class="dropdown-menu">
-                    <a href="addnewbook.html" class="dropdown-item">Add</a>
+                    <a href="addnewbook.jsp" class="dropdown-item">Add</a>
                     <a href="displayallbooksservlet" class="dropdown-item">List</a>
-                    <a href="updatebookcopies.html" class="dropdown-item">Update</a>
+                    <a href="updatebookcopies.jsp" class="dropdown-item">Update</a>
                     <div class="dropdown-divider"></div>
-                    <a href="searchbybookid.html" class="dropdown-item">Search By ID</a>
-                    <a href="searchbybookname.html" class="dropdown-item">Search By Name</a>
-                    <a href="unreturnedbooks.html" class="dropdown-item">UnReturned Book</a>
+                    <a href="searchbybookid.jsp" class="dropdown-item">Search By ID</a>
+                    <a href="searchbybookname.jsp" class="dropdown-item">Search By Name</a>
+                    <a href="unreturnedbooks.jsp" class="dropdown-item">UnReturned Book</a>
                     <div class="dropdown-divider"></div>
 
                 </div>
@@ -55,9 +55,9 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Users</a>
                 <div class="dropdown-menu">
-                    <a href="addnewadmin.html" class="dropdown-item">Add Admin Student</a>
+                    <a href="addnewadmin.jsp" class="dropdown-item">Add Admin Student</a>
                     <div class="dropdown-divider"></div>
-                    <a href="addnewstudent.html" class="dropdown-item">Add Student</a>
+                    <a href="addnewstudent.jsp" class="dropdown-item">Add Student</a>
                     <a href="displayallstudentservlet" class="dropdown-item">List Student</a>
                     <div class="dropdown-divider"></div>
 
@@ -73,10 +73,10 @@
           </ul>  
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Report.html">Welcome Ajmal(Admin)</a>
+                <a class="nav-link" href="Report.jsp">Welcome Ajmal(Admin)</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Logout</a>
+              <a class="nav-link" href="index.jsp">Logout</a>
             </li>
           </ul>  
       </nav>
