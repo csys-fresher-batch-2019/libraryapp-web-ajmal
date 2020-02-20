@@ -1,11 +1,15 @@
 package com.chainsys.libraryapp.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.chainsys.libraryapp.LibaryModel.BookDetails;
+import com.chainsys.libraryapp.service.BookDetailsService;
 
 /**
  * Servlet implementation class SearchByBookIdServlet
@@ -13,29 +17,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SearchByBookIdServlet")
 public class SearchByBookIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SearchByBookIdServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	BookDetailsService ob=new BookDetailsService();
+	String bookid=request.getParameter("bookid");
+	
+	BookDetails book= null;
+	int bookId=Integer.parseInt(bookid);
+	try {
+		book=ob.displayBook(bookId);
+		System.out.println(book);
+		request.setAttribute("BOOK_LIST", book);
+		request.getRequestDispatcher("detailsforbookid.jsp?infoMessage=ListBooks").forward(request, response);
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		response.sendRedirect("searchbybookid.jsp?errorMessage="+e.getMessage());
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
 	}
 
 }

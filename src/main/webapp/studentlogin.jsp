@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
           <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="books.jsp">Books</a>
+          <a class="nav-link" href="DisplayAllBooksServlet">Books</a>
         </li>
       </ul>  
       <ul class="navbar-nav ml-auto">
@@ -40,15 +41,15 @@
 
   <div class="container">
     <h2><center>Student Login</center></h2>
-  <form action="adminhome.jsp" method="GET">
+  <form action="StudentLoginServlet" method="GET">
       <div class="form-group">
         <label for="studentId">StudentId:</label>
-        <input type="number" class="form-control" placeholder="Enter studentId" id="studentId" required autofocus>
+        <input type="number" class="form-control" placeholder="Enter studentId" id="studentId" name="studentid" required autofocus>
       </div>
       <div class="form-group">
         <label for="dateOfBirth">DateOfBirth:</label>
-        <input type="date" class="form-control" placeholder="Enter dateOfBirth" id="date" required>
-      </div>
+        <input type="date" class="form-control" placeholder="Enter dateOfBirth" id="date" name="dob" required>
+      </div>	
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>

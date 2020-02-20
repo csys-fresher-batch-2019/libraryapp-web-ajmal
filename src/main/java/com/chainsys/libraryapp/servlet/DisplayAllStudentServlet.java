@@ -1,11 +1,16 @@
 package com.chainsys.libraryapp.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.chainsys.libraryapp.LibaryModel.StudentDetails;
+import com.chainsys.libraryapp.service.StudentDetailsService;
 
 /**
  * Servlet implementation class DisplayAllStudentServlet
@@ -13,29 +18,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/DisplayAllStudentServlet")
 public class DisplayAllStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DisplayAllStudentServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		StudentDetailsService ob=new StudentDetailsService();
+		ArrayList<StudentDetails> student=null;
+		try {
+			student=ob.displayAllStudents();
+			System.out.println(student);
+			//request.setAttribute("STUDENT_LIST", student);
+			//request.getRequestDispatcher("displayallstudent.jsp?infoMessage=ListBooks").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+			//response.sendRedirect("adminhome.jsp?errorMessage="+e.getMessage());
+			
+		}
+		request.setAttribute("STUDENT_LIST",student);
+		request.getRequestDispatcher("displayallstudent.jsp?infoMessage=ListStudent").forward(request, response);
+		
+		
 	}
 
 }

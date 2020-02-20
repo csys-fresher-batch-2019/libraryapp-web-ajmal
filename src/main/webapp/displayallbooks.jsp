@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
               <a class="nav-link" href="index.jsp">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="books.jsp">Books</a>
+              <a class="nav-link" href="DisplayAllBooksServlet">Books</a>
             </li>
           </ul>  
           <ul class="navbar-nav ml-auto">
@@ -26,50 +27,43 @@
               </li>
           </ul>  
       </nav>
+      
+    
+    
       <div class="container">
         <div class="row">
             <div class="col">
                 <h3 align='center'>Books List</h3>
+                
+                 
       <table class="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>ID</th>  
+            <th>#ID</th>  
             <th>Name</th>
             <th>Category</th>
-            <th>Name</th>
+            <th>AuthorName</th>
             <th>Edition</th>
-            <th>Price</th>
+            <th>Price(Rs)</th>
             <th>PublishedDate</th>
             <th>Copies</th>
             <th>Pages</th>
           </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>212</td>
-                <td>Java</td>
-                <td>Programming</td>
-                <td>Naresh</td>
-                <td>3</td>
-                <td>350</td>
-                <td>2019-12-21</td>
-                <td>30</td>
-                <td>231</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>318</td>
-                <td>SQL</td>
-                <td>Programming</td>
-                <td>KUMAR</td>
-                <td>4</td>
-                <td>450</td>
-                <td>2018-08-08</td>
-                <td>32</td>
-                <td>300</td>
-            </tr>
+        <c:forEach items="${BOOK_LIST}" var="b">
+  <tr>
+  <td>${b.bookId}</td>
+  <td>${b.bookName}</td>
+  <td>${b.bookCategory}</td>
+  <td>${b.bookAutherName}</td>
+  <td>${b.bookEdition}</td>
+  <td>Rs.${b.bookPrice}</td>
+  <td>${b.bookPurchasedDate}</td>
+  <td>${b.bookCopies}</td>
+  <td>${b.bookPages}</td>
+  </tr>
+    </c:forEach>
         </tbody>
       </table>
             </div>

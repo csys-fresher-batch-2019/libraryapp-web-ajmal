@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
     crossorigin="anonymous"></script>
-    <style>
+    <style>O
         /* Make the image fully responsive */
         .carousel-inner img {
           width: 100%;
@@ -28,7 +29,7 @@
               <a class="nav-link" href="index.jsp">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="books.jsp">Books</a>
+              <a class="nav-link" href="DisplayAllBooksServlet">Books</a>
             </li>
           </ul>  
           <ul class="navbar-nav ml-auto">

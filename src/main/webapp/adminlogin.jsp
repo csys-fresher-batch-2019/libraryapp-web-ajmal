@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
           <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="books.jsp">Books</a>
+          <a class="nav-link" href="DisplayAllBooksServlet">Books</a>
         </li>
       </ul>  
       <ul class="navbar-nav ml-auto">
@@ -39,15 +40,20 @@
   </nav>
 
   <div class="container">
+
+  
+  
+  
     <h2><center>Admin Login</center></h2>
+    <center><jsp:include page="message.jsp"></jsp:include></center>
   <form action="AdminLoginServlet" method="GET">
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" class="form-control" placeholder="Enter email" id="email" required autofocus>
+        <input type="email" class="form-control" placeholder="Enter email" id="email" name="mailid"required autofocus>
       </div>
       <div class="form-group">
         <label for="Password">Password:</label>
-        <input type="password" class="form-control" placeholder="Enter Password" id="password" required>
+        <input type="password" class="form-control" placeholder="Enter Password" id="password"name="password" required>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

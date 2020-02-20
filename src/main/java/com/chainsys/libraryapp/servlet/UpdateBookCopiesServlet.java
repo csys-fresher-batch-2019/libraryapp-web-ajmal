@@ -1,11 +1,14 @@
 package com.chainsys.libraryapp.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.chainsys.libraryapp.service.BookDetailsService;
 
 /**
  * Servlet implementation class UpdateBookCopiesServlet
@@ -13,29 +16,25 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/UpdateBookCopiesServlet")
 public class UpdateBookCopiesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UpdateBookCopiesServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		BookDetailsService ob=new BookDetailsService();
+		String bookid = request.getParameter("bookid");
+		int bookId = Integer.valueOf(bookid);
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String bookcopies = request.getParameter("bookcopies");
+		int bookCopies = Integer.valueOf(bookcopies);
+		try {
+			ob.updateBookCopies(bookId, bookCopies);
+			response.sendRedirect("updatebookcopies.jsp?infoMessage=Sucessfully Updated Copies");
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("updatebookcopies.jsp?errorMessage="+e.getMessage());
+			
+		}
+		
+		
+		
 	}
 
 }

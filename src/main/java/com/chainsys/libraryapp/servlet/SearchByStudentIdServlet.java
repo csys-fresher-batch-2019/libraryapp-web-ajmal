@@ -1,11 +1,15 @@
 package com.chainsys.libraryapp.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.chainsys.libraryapp.LibaryModel.StudentDetails;
+import com.chainsys.libraryapp.service.StudentDetailsService;
 
 /**
  * Servlet implementation class SearchByStudentIdServlet
@@ -13,29 +17,23 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SearchByStudentIdServlet")
 public class SearchByStudentIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SearchByStudentIdServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		StudentDetailsService ob=new StudentDetailsService();
+		String studentid=request.getParameter("studentid");
+		int studentId=Integer.parseInt(studentid);
+		StudentDetails obj=null;
+		try {
+			obj=ob.displayStudentDetail(studentId);
+			request.setAttribute("student", obj);
+			request.getRequestDispatcher("displaystudentforid.jsp?infoMessage=StudentDetails").forward(request, response);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("searchbystudentid.jsp?errorMessage="+e.getMessage());
+		}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

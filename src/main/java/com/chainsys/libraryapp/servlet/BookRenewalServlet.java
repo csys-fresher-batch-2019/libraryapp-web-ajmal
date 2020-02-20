@@ -1,41 +1,44 @@
 package com.chainsys.libraryapp.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.chainsys.libraryapp.service.SummaryDetailsService;
+
 /**
  * Servlet implementation class BookRenewalServlet
  */
 @WebServlet("/BookRenewalServlet")
 public class BookRenewalServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BookRenewalServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		protected void doGet(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			SummaryDetailsService ob = new SummaryDetailsService();
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+			String bookid = request.getParameter("bookid");
+			int bookId = Integer.valueOf(bookid);
+
+			String studentid = request.getParameter("studentid");
+			int studentId = Integer.valueOf(studentid);
+			int fineAmount;
+			try {
+				fineAmount = ob.calculateFineAmount(studentId, bookId);
+				request.setAttribute("fineamount", fineAmount);
+				request.setAttribute("bookid", bookId);
+				request.setAttribute("studentid", studentId);
+				RequestDispatcher rd=request.getRequestDispatcher("bookrenewalfine.jsp?infoMessage=Fine Amount");
+				rd.forward(request, response);
+			
+			} catch (Exception e) {
+				e.printStackTrace();
+				response.sendRedirect("bookrenewal.jsp?errorMessage="+e.getMessage());
+			}}
 
 }

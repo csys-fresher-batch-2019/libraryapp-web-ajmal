@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class AdminLogoutServlet
@@ -21,9 +22,9 @@ public class AdminLogoutServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println(request.getContextPath());
 		
-		//HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		//session.setAttribute("LOGGED_IN_USER", "admin");
-		
+		session.invalidate();
 		response.sendRedirect("index.jsp?infoMessage=Successfully LoggedOut");
 	}
 	

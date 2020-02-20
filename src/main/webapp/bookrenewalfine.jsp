@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,83 +19,29 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="nav-brand" href="#">Library</a> 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="adminhome.jsp">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Action</a>
-                <div class="dropdown-menu">
-                    <a href="bookentry.jsp" class="dropdown-item">BookEntry</a>
-                    <a href="#" class="dropdown-item">BookReturn</a>
-                    <a href="#" class="dropdown-item">BookRenewal</a>
-                    <div class="dropdown-divider"></div>
-
-                </div>
-            </li>
-
-              </div>
-            
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Books</a>
-                <div class="dropdown-menu">
-                    <a href="addnewbook.jsp" class="dropdown-item">Add</a>
-                    <a href="displayallbooksservlet" class="dropdown-item">List</a>
-                    <a href="updatebookcopies.jsp" class="dropdown-item">Update</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="searchbybookid.jsp" class="dropdown-item">Search By ID</a>
-                    <a href="searchbybookname.jsp" class="dropdown-item">Search By Name</a>
-                    <a href="unreturnedbooks.jsp" class="dropdown-item">UnReturned Book</a>
-                    <div class="dropdown-divider"></div>
-
-                </div>
-            </li>
-            
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Users</a>
-                <div class="dropdown-menu">
-                    <a href="addnewadmin.jsp" class="dropdown-item">Add Admin Student</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="addnewstudent.jsp" class="dropdown-item">Add Student</a>
-                    <a href="displayallstudentservlet" class="dropdown-item">List Student</a>
-                    <div class="dropdown-divider"></div>
-
-                </div>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Report</a>
-                <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Search By Student ID</a>
-                </div>
-            </li>
-          </ul>  
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="Report.jsp">Welcome Ajmal(Admin)</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.jsp">Logout</a>
-            </li>
-          </ul>  
-      </nav>
+<jsp:include page="adminheader.jsp"></jsp:include>
       <div class="container">
-        <h2><center>Book Renewalurn</center></h2>
-      <form action="bookRenevalFineServlet" method="GET">
+        <h2><center>Book Renewal</center></h2>
+      <form action="BookRenewalFineServlet" method="GET">
+          <div class="form-group">
+          <label for="number">BooktId:</label>
+          <input type="number" class="form-control" placeholder="" id="number" value="${bookid }" name="bookid" readonly  required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="number">StudentId:</label>
+            <input type="number" class="form-control" placeholder="" id="number" name="studentid"value="${studentid}" readonly required>
+          </div>
           <div class="form-group">
             <label for="number">Fine:</label>
-            <input type="number" class="form-control" placeholder="" id="number" required autofocus>
+            <input type="number" class="form-control" placeholder="" id="number"value="${fineamount}" name="fineamount" readonly required autofocus>
           </div>
-          <div class="form-group">
-            <label for="radio">Do you want to Renewal the book:</label>
-            <input type="radio" class="form-control" placeholder="Enter Y/N" id="radio" required>
-            <input type="radio" class="form-control" placeholder="Enter Y/N" id="radio" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+          <div class="form-group-row">
+            <label for="radio">Do you want to renewal the book:</label><br>
+            Yes<input type="radio" class="form-control inline" placeholder="Enter Y/N" id="radio" name="return" value="y"  required>
+            No<input type="radio" class="form-control inline" placeholder="Enter Y/N" id="radio"  name="return" value="n" required>
+          
       </div>
+      <center><button type="submit" class="btn btn-primary">Submit</button></center>
       
     </body>
     </html>
