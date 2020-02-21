@@ -35,6 +35,11 @@
   <artifactId>libraryapp-core</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   		</dependency> -->
+	  <dependency>
+  <groupId>com.chainsys</groupId>
+  <artifactId>libraryapp-core</artifactId>
+  <version>1.0</version>
+</dependency>
   <dependency>
 			<groupId>org.jdbi</groupId>
 			<artifactId>jdbi3-sqlobject</artifactId>
