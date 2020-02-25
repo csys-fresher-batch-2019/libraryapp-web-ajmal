@@ -63,10 +63,11 @@
        <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h2><center>Search By BookId </center></h2>
+          <center><jsp:include page="message.jsp"></jsp:include></center>
         <form action="SearchByBookIdStdServlet" method="GET">
             <div class="form-group">
               <label for="number">BookId:</label>
-              <input type="number" class="form-control" placeholder="Enter BookId" id="number" required autofocus>
+              <input type="number" class="form-control" placeholder="Enter BookId" id="number" name="bookid" required autofocus>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

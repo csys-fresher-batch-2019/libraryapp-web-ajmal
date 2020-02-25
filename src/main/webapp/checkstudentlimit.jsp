@@ -53,7 +53,7 @@
           </ul>  
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Report.jsp">Welcome Ahamed(Student)</a>
+                <a class="nav-link" href="Report.jsp">Welcome (Student)</a>
               </li>
             <li class="nav-item">
               <a class="nav-link" href="StudentLogoutServlet">Logout</a>

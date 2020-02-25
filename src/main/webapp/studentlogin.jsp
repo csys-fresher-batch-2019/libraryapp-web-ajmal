@@ -41,6 +41,7 @@
 
   <div class="container">
     <h2><center>Student Login</center></h2>
+    <center><jsp:include page="message.jsp"></jsp:include></center>
   <form action="StudentLoginServlet" method="GET">
       <div class="form-group">
         <label for="studentId">StudentId:</label>

@@ -63,34 +63,33 @@
        <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h2><center>DisplayBook </center></h2>
-             <table class="table">
+              <table class="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>ID</th>  
+            <th>#ID</th>  
             <th>Name</th>
             <th>Category</th>
-            <th>Name</th>
+            <th>AuthorName</th>
             <th>Edition</th>
-            <th>Price</th>
+            <th>Price(Rs)</th>
             <th>PublishedDate</th>
             <th>Copies</th>
             <th>Pages</th>
           </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>212</td>
-                <td>Java</td>
-                <td>Programming</td>
-                <td>Naresh</td>
-                <td>3</td>
-                <td>350</td>
-                <td>2019-12-21</td>
-                <td>30</td>
-                <td>231</td>
-            </tr>
+        
+  <tr>
+  <td>${BOOK_LIST.bookId}</td>
+  <td>${BOOK_LIST.bookName}</td>
+  <td>${BOOK_LIST.bookCategory}</td>
+  <td>${BOOK_LIST.bookAutherName}</td>
+  <td>${BOOK_LIST.bookEdition}</td>
+  <td>Rs.${BOOK_LIST.bookPrice}</td>
+  <td>${BOOK_LIST.bookPurchasedDate}</td>
+  <td>${BOOK_LIST.bookCopies}</td>
+  <td>${BOOK_LIST.bookPages}</td>
+  </tr>
         </tbody>
       </table>
         
